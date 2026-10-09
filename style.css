@@ -1,0 +1,104 @@
+/* ====== Biến màu ====== */
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --temp: #f97316;
+  --hum: #38bdf8;
+  --soil: #a3e635;
+  --dist: #c084fc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+}
+
+header h1 { margin: 0 0 6px; }
+header p  { margin: 0 0 24px; color: var(--muted); }
+
+/* ====== Lưới thẻ ====== */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px 32px;
+  min-width: 240px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
+}
+
+.label { font-size: 17px; color: var(--muted); }
+.value { font-size: 48px; font-weight: bold; margin-top: 8px; }
+
+.temp { color: var(--temp); }
+.hum  { color: var(--hum); }
+.soil { color: var(--soil); }
+.dist { color: var(--dist); }
+
+/* ====== Thanh tiến trình ====== */
+.bar {
+  height: 10px;
+  background: #334155;
+  border-radius: 10px;
+  margin-top: 14px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  transition: width .5s;
+}
+.soil-fill { background: var(--soil); }
+.dist-fill { background: var(--dist); }
+
+.status { margin-top: 8px; font-size: 14px; color: var(--muted); }
+
+/* ====== Đèn ====== */
+.bulb {
+  font-size: 64px;
+  filter: grayscale(1) brightness(.5);
+  transition: .3s;
+}
+.bulb.on {
+  filter: none;
+  text-shadow: 0 0 25px #facc15;
+}
+.light-state { font-size: 20px; font-weight: bold; margin: 6px 0 14px; }
+
+/* ====== Công tắc ====== */
+.switch { position: relative; display: inline-block; width: 80px; height: 42px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; inset: 0;
+  background: #475569;
+  border-radius: 42px;
+  cursor: pointer;
+  transition: .3s;
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 34px; height: 34px;
+  left: 4px; top: 4px;
+  background: #fff;
+  border-radius: 50%;
+  transition: .3s;
+}
+input:checked + .slider { background: #22c55e; }
+input:checked + .slider::before { transform: translateX(38px); }
+
+footer { margin-top: 30px; color: var(--muted); font-size: 14px; }

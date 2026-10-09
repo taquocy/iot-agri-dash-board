@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard IoT - Dữ liệu giả lập</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌐 Dashboard IoT</h1>
+    <p>Dữ liệu giả lập ngẫu nhiên, cập nhật mỗi giây</p>
+  </header>
+
+  <main class="grid">
+    <!-- Nhiệt độ -->
+    <section class="card">
+      <div class="label">🌡️ Nhiệt độ</div>
+      <div class="value temp"><span id="temp">--</span> °C</div>
+    </section>
+
+    <!-- Độ ẩm không khí -->
+    <section class="card">
+      <div class="label">💧 Độ ẩm không khí</div>
+      <div class="value hum"><span id="hum">--</span> %</div>
+    </section>
+
+    <!-- Độ ẩm đất -->
+    <section class="card">
+      <div class="label">🌱 Độ ẩm đất</div>
+      <div class="value soil"><span id="soil">--</span> %</div>
+      <div class="bar"><div id="soilBar" class="bar-fill soil-fill"></div></div>
+      <div id="soilStatus" class="status">--</div>
+    </section>
+
+    <!-- Khoảng cách -->
+    <section class="card">
+      <div class="label">📏 Khoảng cách</div>
+      <div class="value dist"><span id="dist">--</span> cm</div>
+      <div class="bar"><div id="distBar" class="bar-fill dist-fill"></div></div>
+      <div class="status">Thang đo: 0 – 400 cm</div>
+    </section>
+
+    <!-- Công tắc + Đèn -->
+    <section class="card">
+      <div class="label">Đèn</div>
+      <div id="bulb" class="bulb">💡</div>
+      <div id="lightState" class="light-state">TẮT</div>
+      <label class="switch">
+        <input type="checkbox" id="lightSwitch">
+        <span class="slider"></span>
+      </label>
+    </section>
+  </main>
+
+  <footer>Lab IoT - HTML / CSS / JavaScript</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
